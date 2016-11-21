@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 	}
   `]
 })
-export class DeadlineComponent { }
+export class DeadlineComponent { 
+	text :string
+	constructor(text:string){
+		this.text = text;
+	}
+}
