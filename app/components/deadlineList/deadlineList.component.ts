@@ -2,19 +2,16 @@ import { Component } from '@angular/core';
 import { DeadlineComponent } from '../deadline/deadline.component'
 import {NgFor} from '@angular/common';
 
+
+const MessageList:string[] = ["End of Semester", "Physics Class", "Christmas"]
+
 @Component({
     selector: 'deadline-list',
     template: `
-    <deadline *ngFor="let dl of deadlines">
+    <deadline *ngFor="let msg of messages" [text]="msg">
     </deadline>
     `,
 })
 export class DeadlineListComponent { 
-	message : string = "Hello World!"
-	messages : string[] = ["Hello", "Bonjour"]
-	deadlines : DeadlineComponent[]
-
-	constructor () {
-		this.deadlines = [ new DeadlineComponent("foo"), new DeadlineComponent("foo"), new DeadlineComponent("foo")]
-	}
+	messages : string[] = MessageList;
 }
