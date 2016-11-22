@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Deadline } from '../deadlineList/deadline.model'
+import { Deadline } from '../../deadlineService/deadline.model'
 
 @Component({
     selector: 'deadline',
@@ -11,5 +11,5 @@ import { Deadline } from '../deadlineList/deadline.model'
   `]
 })
 export class DeadlineComponent { 
-	@Input() text:string
+	@Input() description:string
 }

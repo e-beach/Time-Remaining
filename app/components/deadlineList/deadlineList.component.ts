@@ -8,10 +8,10 @@ const MessageList:string[] = ["End of Semester", "Physics Class", "Christmas"]
 @Component({
     selector: 'deadline-list',
     template: `
-    <deadline *ngFor="let msg of messages" [text]="msg">
+    <deadline *ngFor="let msg of messages" [description]="msg">
     </deadline>
     `,
 })
 export class DeadlineListComponent { 
-	messages : string[] = MessageList;
+	messages : string[] = MessageList
 }
