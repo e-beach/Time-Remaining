@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DeadlineComponent } from '../deadline/deadline.component'
+import { Deadline } from '../deadlineService/deadline.model'
 import {NgFor} from '@angular/common';
 
 
@@ -8,10 +8,12 @@ const MessageList:string[] = ["End of Semester", "Physics Class", "Christmas"]
 @Component({
     selector: 'deadline-list',
     template: `
-    <deadline *ngFor="let msg of messages" [description]="msg">
+    <deadline *ngFor="let d of deadlines" [deadline]="d">
     </deadline>
     `,
 })
 export class DeadlineListComponent { 
-	messages : string[] = MessageList
+	deadlines: Deadline[] = [
+	{name:"Semester", description:"Complete this deadline now!", completed: false}
+	]
 }

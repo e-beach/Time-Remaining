@@ -2,9 +2,9 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { AppComponent }  from './components/app/app.component';
-import { DeadlineComponent }  from './components/deadline/deadline.component';
-import { DeadlineListComponent }  from './components/deadlineList/deadlineList.component';
+import { AppComponent }  from './app/app.component';
+import { DeadlineComponent }  from './deadline/deadline.component';
+import { DeadlineListComponent }  from './deadlineList/deadlineList.component';
 
 @NgModule({
   imports:      [ BrowserModule, NgbModule.forRoot() ],
