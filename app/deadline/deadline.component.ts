@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Deadline } from '../deadlineService/deadline.model'
 
+
 @Component({
     selector: 'deadline',
     templateUrl: 'app/deadline/deadline.component.html',
