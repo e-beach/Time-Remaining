@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Deadline } from '../deadlineService/deadline.model'
 import { DeadlinesService } from '../deadlineService/deadline.service'
+import {AppState, DataListener} from '../deadlineService/dataListener'
 import {NgFor} from '@angular/common';
 
 
@@ -15,12 +16,17 @@ const DeadlineList:Deadline[] = [
     </deadline>
     `,
 })
-export class DeadlineListComponent implements OnInit { 
+export class DeadlineListComponent implements OnInit, DataListener { 
 	deadlines: Deadline[] = DeadlineList
 
 	constructor(private _deadlinesService:DeadlinesService){}
 
 	ngOnInit() {
+		this._deadlinesService.addListener(this);
     	this.deadlines = this._deadlinesService.getDeadlines();
+ 	}
+
+ 	update(){
+ 		this.deadlines = this._deadlinesService.getDeadlines();
  	}
 }
