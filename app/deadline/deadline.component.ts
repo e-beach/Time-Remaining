@@ -14,9 +14,9 @@ import { DeadlinesService } from '../deadlineService/deadline.service'
 })
 export class DeadlineComponent implements OnInit { 
 	@Input() deadline:Deadline
+	date:Date = new Date()
 
 	constructor(private _deadlinesService:DeadlinesService){}
-
 
 	delete() {
 		this._deadlinesService.deleteDeadline(this.deadline);

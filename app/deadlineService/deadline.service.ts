@@ -19,10 +19,11 @@ export class DeadlinesService {
   };
 
   deleteDeadline(deadline:Deadline) :void {
-  	console.log("filtered!");
-  	console.log(this.Deadlines.length);
-  	// this does not change the pointer we returned to ng
   	this.Deadlines = this.Deadlines.filter(dl => dl !== deadline);
+  	this.update();
+  }
+
+  update(){
   	for (let listener of this.listeners){
   		listener.update();
   	}
