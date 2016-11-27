@@ -1,20 +1,27 @@
 <div class="container">
-     <nav class="navbar navbar-light bg-faded">
-       <div class="container-fluid">
-         <div class="navbar-header">
-          <a href="#" class="navbar-brand"> Time Remaining</a>
-         </div>
-       </div>
-     </nav>
-   <div class="card">
-   	<div class="card-block">
-      This app needs two features:
-        <ol>
-          <li>User can add a deadline and give it a name</li>
-          <li>User can view time remaining, in weeks, for deadline</li>
-          <li>This will be implemented as the list of deadlines below.</li>
-        </ol>
-     </div>
-   </div>
-   <deadline-list></deadline-list>
+ <nav class="navbar navbar-light bg-faded">
+   <div class="container-fluid">
+     <div class="navbar-header">
+      <a href="#" class="navbar-brand"> Time Remaining</a>
+    </div>
+  </div>
+</nav>
+<div class="card">
+  <div class="card-block">
+    This app needs two features:
+    <ol>
+      <li>User can add a deadline and give it a name</li>
+      <li>User can view time remaining, in weeks, for deadline</li>
+      <li>This will be implemented as the list of deadlines below.</li>
+    </ol>
+  </div>
+</div>
+<form>
+  <button class="btn btn-success col-md-4">Create</button>
+  <input placeholder="name" autofocus
+  [(ngModel)]="newItem.name">
+  <input placeholder="What's hanging over your head?" autofocus
+  [(ngModel)]="newItem.name">
+</form>
+<deadline-list></deadline-list>
 </div>

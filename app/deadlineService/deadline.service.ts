@@ -2,19 +2,24 @@ import {Injectable} from '@angular/core';
 import {Deadline} from './deadline.model';
 import {DataListener} from './dataListener'
 
+
+let dl_count = 0;
+function fillerDeadline() :Deadline {
+  dl_count++;
+  return {name: `Deadline ${dl_count}`, description: 'This is a Deadline.', completed:false, dueDate: new Date()};
+}
+
 @Injectable()
 export class DeadlinesService {
 
   private listeners: DataListener[]=[];
 
   private Deadlines: Deadline[] = [
-    {name: 'Deadline 1', description: 'This is an Deadline', completed:false},
-    {name: 'Deadline 2', description: 'This is an Deadline', completed:false},
-    {name: 'Deadline 3', description: 'This is an Deadline', completed:false},
-    {name: 'Deadline 4', description: 'This is an Deadline', completed:false}
+    fillerDeadline(), fillerDeadline()
   ];
 
-  getDeadlines(): Deadline[] {
+
+  getDeadlines() :Deadline[] {
     return this.Deadlines;
   };
 
