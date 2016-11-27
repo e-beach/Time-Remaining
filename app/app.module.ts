@@ -7,10 +7,11 @@ import { AppComponent }  from './app/app.component';
 import { DeadlineComponent }  from './deadline/deadline.component';
 import { DeadlineListComponent }  from './deadlineList/deadlineList.component';
 import { DeadlinesService } from './deadlineService/deadline.service'
+import { CreateFormComponent } from './createForm/createForm.component';
 
 @NgModule({
   imports:      [ BrowserModule, NgbModule.forRoot(), FormsModule ],
-  declarations: [ AppComponent, DeadlineComponent, DeadlineListComponent],
+  declarations: [ AppComponent, DeadlineComponent, DeadlineListComponent, CreateFormComponent],
   providers : [DeadlinesService],
   bootstrap:    [ AppComponent ]
 })

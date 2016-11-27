@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { Deadline }  from './deadline.model';
+import { Deadline }  from '../deadlineService/deadline.model';
 
 @Component({
   moduleId: module.id,
-  selector: 'hero-form',
-  templateUrl: 'hero-form.component.html'
+  selector: 'create-form',
+  templateUrl: 'createForm.component.html'
 })
 
-export class HeroFormComponent {
+export class CreateFormComponent {
   powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
-  model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  model = new Deadline("Semester", "End of Semester Fall 2016", false, new Date());
   submitted = false;
   onSubmit() { this.submitted = true; }
   // TODO: Remove this when we're done
