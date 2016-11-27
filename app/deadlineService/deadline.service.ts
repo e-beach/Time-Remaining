@@ -28,7 +28,12 @@ export class DeadlinesService {
   	this.update();
   }
 
-  update(){
+  addDeadLine(deadline:Deadline) :void {
+    this.Deadlines.push(deadline);
+    this.update();
+  }
+
+  update() :void {
   	for (let listener of this.listeners){
   		listener.update();
   	}
