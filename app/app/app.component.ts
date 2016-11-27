@@ -6,5 +6,5 @@ import { Deadline } from '../deadlineService/deadline.model'
     templateUrl: 'app/app/app.component.html'
 })
 export class AppComponent { 
-	newItem = 'test';
+	newItem:Deadline = new Deadline(null,null,null,null);
 }
