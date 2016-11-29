@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Deadline }  from '../deadlineService/deadline.model';
 import { DeadlinesService }  from '../deadlineService/deadline.service';
+import { DatePickerIonicComponent, DatePickerModule } from 'ng2-datepicker';
+
 
 @Component({
   moduleId: module.id,
   selector: 'create-form',
+  imports : DatePickerModule,
   templateUrl: 'createForm.component.html',
   styles: [`
   .ng-valid[required], .ng-valid.required  {
@@ -18,17 +21,14 @@ import { DeadlinesService }  from '../deadlineService/deadline.service';
 
 export class CreateFormComponent {
 
+  model :Deadline = new Deadline("", "", false, new Date());
+  submitted :boolean = false;
+
   constructor(private _deadlinesService:DeadlinesService){}
 
-  powers = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
-  model :Deadline = new Deadline("Semester", "End of Semester Fall 2016", false, new Date());
-  submitted = false;
   onSubmit() { 
     this.submitted = true; 
     console.log('submitted');
     this._deadlinesService.addDeadLine(this.model);
   }
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 }
