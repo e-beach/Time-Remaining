@@ -7,7 +7,6 @@ import { DatePickerIonicComponent, DatePickerModule } from 'ng2-datepicker';
 @Component({
   moduleId: module.id,
   selector: 'create-form',
-  imports : DatePickerModule,
   templateUrl: 'createForm.component.html',
   styles: [`
   .ng-valid[required], .ng-valid.required  {
