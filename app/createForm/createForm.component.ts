@@ -27,7 +27,6 @@ export class CreateFormComponent {
 
   onSubmit() { 
     this.submitted = true; 
-    console.log('submitted');
     this._deadlinesService.addDeadLine(this.model);
     // copy to new reference
     this.model = new Deadline(this.model.name, this.model.description, this.model.completed, this.model.dueDate);
