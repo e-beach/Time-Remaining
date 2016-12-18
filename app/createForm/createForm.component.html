@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container"> 
     <h1>Create</h1>
     <form (ngSubmit)=onSubmit()>
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #spy #name="ngModel">
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
          <div [hidden]="name.valid || name.pristine"
              class="alert alert-danger">
           Name is required
@@ -14,8 +14,8 @@
         <input type="text" class="form-control" id="description" [(ngModel)]="model.description" name="description">
       </div>
       <div class="form-group">
-        <label for="due-date">DueDate</label>
-        <input type="date" class="form-control" id="due-date" [(ngModel)]="model.dueDate" name="due-date">
+      <label for="dp">DueDate</label>
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date"  ngbDatepicker #d="ngModel" required>
       </div>
       <button type="submit" class="btn btn-success">Submit</button>
     </form>

@@ -3,6 +3,11 @@ import { Deadline }  from '../deadlineService/deadline.model';
 import { DeadlinesService }  from '../deadlineService/deadline.service';
 import { DatePickerIonicComponent, DatePickerModule } from 'ng2-datepicker';
 
+interface ngbDate {
+  year :number,
+  month :number,
+  day :number
+}
 
 @Component({
   moduleId: module.id,
@@ -21,12 +26,17 @@ import { DatePickerIonicComponent, DatePickerModule } from 'ng2-datepicker';
 export class CreateFormComponent {
 
   model :Deadline = new Deadline("", "", false, new Date());
+  date :ngbDate;
   submitted :boolean = false;
 
   constructor(private _deadlinesService:DeadlinesService){}
 
   onSubmit() { 
     this.submitted = true; 
+    console.log(this.model.dueDate);
+
+    this.model.dueDate = new Date(this.date.year, this.date.month, this.date.day, 0,0,0,0);
+
     this._deadlinesService.addDeadLine(this.model);
     // copy to new reference
     this.model = new Deadline(this.model.name, this.model.description, this.model.completed, this.model.dueDate);
