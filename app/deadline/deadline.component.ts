@@ -1,6 +1,9 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Deadline } from '../deadlineService/deadline.model'
 import { DeadlinesService } from '../deadlineService/deadline.service'
+
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -12,7 +15,7 @@ import { DeadlinesService } from '../deadlineService/deadline.service'
 	}
   `]
 })
-export class DeadlineComponent implements OnInit { 
+export class DeadlineComponent { 
 	@Input() deadline:Deadline
 
 	constructor(private _deadlinesService:DeadlinesService){}
@@ -21,5 +24,7 @@ export class DeadlineComponent implements OnInit {
 		this._deadlinesService.deleteDeadline(this.deadline);
 	}
 
-	ngOnInit(){}
+	render() {
+		return moment(this.deadline.dueDate).fromNow();
+	}
 }

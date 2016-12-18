@@ -18,6 +18,12 @@ export class DeadlinesService {
     fillerDeadline(), fillerDeadline()
   ];
 
+  constructor(){
+    if (localStorage.getItem('deadLines')){
+      this.Deadlines = JSON.parse( localStorage.getItem('deadLines') );
+    }
+  }
+
 
   getDeadlines() :Deadline[] {
     return this.Deadlines;
@@ -33,13 +39,15 @@ export class DeadlinesService {
     this.update();
   }
 
+  // I only have one listener, so update() and addListener() methods could be simplified.
   update() :void {
   	for (let listener of this.listeners){
   		listener.update();
   	}
+    localStorage.setItem('deadLines', JSON.stringify( this.Deadlines));
   }
 
-  addListener(dl:DataListener) :void{
+  addListener(dl:DataListener) :void {
   	this.listeners.push(dl);
   }
 

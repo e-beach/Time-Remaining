@@ -3,6 +3,7 @@ import { Deadline }  from '../deadlineService/deadline.model';
 import { DeadlinesService }  from '../deadlineService/deadline.service';
 import { DatePickerIonicComponent, DatePickerModule } from 'ng2-datepicker';
 
+
 interface ngbDate {
   year :number,
   month :number,
@@ -35,7 +36,8 @@ export class CreateFormComponent {
     this.submitted = true; 
     console.log(this.model.dueDate);
 
-    this.model.dueDate = new Date(this.date.year, this.date.month, this.date.day, 0,0,0,0);
+    // months are not zero-indexed. I don't know why.
+    this.model.dueDate = new Date(this.date.year, this.date.month - 1, this.date.day, 0,0,0,0);
 
     this._deadlinesService.addDeadLine(this.model);
     // copy to new reference
