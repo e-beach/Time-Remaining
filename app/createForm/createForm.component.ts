@@ -36,9 +36,8 @@ export class CreateFormComponent {
     this.submitted = true; 
     console.log(this.model.dueDate);
 
-    // months are not zero-indexed. I don't know why.
     this.model.dueDate = new Date(this.date.year, this.date.month - 1, this.date.day, 0,0,0,0);
-
+    
     this._deadlinesService.addDeadLine(this.model);
     // copy to new reference
     this.model = new Deadline(this.model.name, this.model.description, this.model.completed, this.model.dueDate);
