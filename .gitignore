@@ -1,7 +1,3 @@
-dist
-heroku
-
-.idea
 node_modules
 jspm_packages
 npm-debug.*
