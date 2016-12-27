@@ -1,4 +1,4 @@
-<div class="container"> 
+<div class="container card" style="margin-top:20px"> 
     <h1>Create</h1>
     <form (ngSubmit)=onSubmit()>
       <div class="form-group">
@@ -17,6 +17,6 @@
       <label for="dp">DueDate</label>
         <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date"  ngbDatepicker #d="ngModel" required>
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success" style="margin-bottom:20px;">Submit</button>
     </form>
 </div>
